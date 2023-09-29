@@ -4,7 +4,7 @@ from Cryptodome.Hash import SHA512
 from Cryptodome.Random import get_random_bytes
 from utils.dbconfig import dbconfig
 from rich import print as printc
-from rich.console import console
+from rich.console import Console
 
 import utils.aesutil
 
@@ -34,6 +34,8 @@ def addEntry(mp, ds, sitename, siteurl, email, username):
     db.commit()
 
     printc("[green][+][/green] Entry has been added")
+
+    db.close()
 
 
 
