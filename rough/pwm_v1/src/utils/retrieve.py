@@ -27,7 +27,7 @@ def retrieveEntries(mp, ds, search, decryptPassword = False):
     if len(search) == 0:
         query = '''SELECT * FROM Password_Manager.entries;'''
     else:
-        query = '''SELECT * FROM Password_Manager.entries WHERE'''
+        query = '''SELECT * FROM Password_Manager.entries WHERE '''
         for i in search:
             query += f"{i} = '{search[i]}' AND "
         query = query[:-5]

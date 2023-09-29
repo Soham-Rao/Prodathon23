@@ -38,7 +38,7 @@ def encrypt(key, source, encode=True, keyType = 'hex'):
 	if keyType == "hex":
 		 # Convert key (in hex representation) to bytes 
 		key = bytes(bytearray.fromhex(key))
-	else:
+	elif keyType != "bytes":
 		# use SHA-256 over our key to get a proper-sized AES key. Outputs in bytes 
 		key = key.encode()
 		key = SHA256.new(key).digest()
@@ -70,7 +70,7 @@ def decrypt(key, source, decode=True,keyType="hex"):
 	if keyType == "hex":
 		# Convert key to bytes
 		key = bytes(bytearray.fromhex(key))
-	else:
+	elif keyType != "bytes":
 		# use SHA-256 over our key to get a proper-sized AES key
 		key = key.encode()
 		key = SHA256.new(key).digest()  

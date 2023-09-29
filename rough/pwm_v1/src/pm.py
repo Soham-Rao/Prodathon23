@@ -14,7 +14,7 @@ parser = argparse.ArgumentParser(description = "Description")
 
 parser.add_argument('option', help = '(a)dd / (e)xtract / (g)enerate')
 parser.add_argument('-s', '--name', help = 'Site name')
-parser.add_argument('-u', '-url', help = 'Site URL')
+parser.add_argument('-u', '--url', help = 'Site URL')
 parser.add_argument('-e', '--email', help = 'Email')
 parser.add_argument('-l', '--login', help = 'Username')
 parser.add_argument('--length', help = 'Length of password to generate', type = int)
@@ -27,7 +27,7 @@ def inputAndValidateMasterPassword():
     hashed_mp = hashlib.sha256(mp.encode()).hexdigest()
 
     db = dbconfig()
-    cursor = db.cursor
+    cursor = db.cursor()
     query = '''SELECT * FROM Password_Manager.secrets;'''
     cursor.execute(query)
     results = cursor.fetchall()[0]
