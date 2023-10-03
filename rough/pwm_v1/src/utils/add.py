@@ -1,7 +1,7 @@
 from getpass import getpass
-from Cryptodome.Protocol.KDF import PBKDF2
-from Cryptodome.Hash import SHA512
-from Cryptodome.Random import get_random_bytes
+from Crypto.Protocol.KDF import PBKDF2
+from Crypto.Hash import SHA512
+from Crypto.Random import get_random_bytes
 from utils.dbconfig import dbconfig
 from rich import print as printc
 from rich.console import Console
