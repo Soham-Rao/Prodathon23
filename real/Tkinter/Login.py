@@ -10,11 +10,13 @@ from tkinter import END, INSERT, PhotoImage, ttk, messagebox
 
 #from Window_Maker import Window_Maker
 
+Current_user = None
+        
+
 class Login_Window():
     def __init__(self):
         tk.set_appearance_mode("dark")
         tk.set_default_color_theme("dark-blue")
-        self.current_user = None
         # self.windowmaker = Window_maker()
 
     def Make_Win(self, Window, window_title, bgimg):
@@ -101,10 +103,12 @@ class Login_Window():
                 deswin()
                 messagebox.showinfo("","Login Success")
                 db.close()
-                self.current_user = username
+                
+                with open ("temp.txt", "w") as f:
+                    f.write(username)
 
                 
-                return True
+                
             else:
                 messagebox.showerror("","Incorrect Username or Password")
                 db.close()
@@ -129,8 +133,8 @@ class Login_Window():
                 Window.destroy()
             except tkinter.TclError:
                 pass
-            self.current_user = None
-            # self.windowmaker.user = "Guest"
+            current_user = None
+            #print(current_user)
             messagebox.showinfo("","You have successfully logged out")
 
 
@@ -256,11 +260,11 @@ class Login_Window():
                 rpass_Entry.delete(0, END)
                 re_pass_Entry.delete(0, END)
                 deswin()
-                return True
+                
             else:
                 messagebox.showerror("","Password doesn't match confirmation password or too small")
                 deswin()
-                return False
+                
 
 
 
