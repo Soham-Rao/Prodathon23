@@ -17,9 +17,9 @@ python aesutil.py decrypt "KnJxqDY0D5zWgycuvxZdTKm2520qI2DRCItSMyJtdxA=" "testpa
 '''
 
 import base64
-from Crypto.Cipher import AES
-from Crypto.Hash import SHA256
-from Crypto import Random
+from Cryptodome.Cipher import AES
+from Cryptodome.Hash import SHA256
+from Cryptodome import Random
 import sys
 
 def encrypt(key, source, encode=True, keyType = 'hex'):

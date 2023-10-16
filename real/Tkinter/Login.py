@@ -104,7 +104,7 @@ class Login_Window():
                 messagebox.showinfo("","Login Success")
                 db.close()
                 
-                with open ("temp.txt", "w") as f:
+                with open ("temp1.txt", "w") as f:
                     f.write(username)
 
                 
@@ -133,8 +133,8 @@ class Login_Window():
                 Window.destroy()
             except tkinter.TclError:
                 pass
-            current_user = None
-            #print(current_user)
+            with open ("temp1.txt", "w") as f:
+                f.write("None")
             messagebox.showinfo("","You have successfully logged out")
 
 

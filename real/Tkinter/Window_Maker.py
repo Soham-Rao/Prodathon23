@@ -122,83 +122,9 @@ class Window_Makers():
     def Make_add(self, Window, window_title, bgimg, fgcolor, hcolor, text1, text2, command1, command2):
         
         def add_widgets(Window, fgcolor, hcolor, text1, text2, command1, command2):
-
-###            
-            sitename_Entry = tk.CTkEntry(master = Window)
-            sitename_Entry.place(x = 460, y = 100, width = 300, height = 30)
-
-            sitename_Entry.insert(0, "Site name")
-
-            def on_enter(e):
-                sitename_Entry.delete(0, END)
-            def on_leave(e):
-                if sitename_Entry.get() == "":
-                    sitename_Entry.insert(0, "Site name")
-
-            sitename_Entry.bind("<FocusIn>", on_enter)
-            sitename_Entry.bind("<FocusOut>", on_leave)
-
-###
-            siteurl_Entry = tk.CTkEntry(master = Window)
-            siteurl_Entry.place(x = 460, y = 150, width = 300, height = 30)
-
-            siteurl_Entry.insert(0, "Site URL")
-
-            def on_enter(e):
-                siteurl_Entry.delete(0, END)
-            def on_leave(e):
-                if siteurl_Entry.get() == "":
-                    siteurl_Entry.insert(0, "Site URL")
-
-            siteurl_Entry.bind("<FocusIn>", on_enter)
-            siteurl_Entry.bind("<FocusOut>", on_leave)
-
-###
-            email_Entry = tk.CTkEntry(master = Window)
-            email_Entry.place(x = 460, y = 200, width = 300, height = 30)
-
-            email_Entry.insert(0, "Email")
-
-            def on_enter(e):
-                email_Entry.delete(0, END)
-            def on_leave(e):
-                if email_Entry.get() == "":
-                    email_Entry.insert(0, "Email")
-
-            email_Entry.bind("<FocusIn>", on_enter)
-            email_Entry.bind("<FocusOut>", on_leave)
-
-###
-            siteusername_Entry = tk.CTkEntry(master = Window)
-            siteusername_Entry.place(x = 460, y = 250, width = 300, height = 30)
-
-            siteusername_Entry.insert(0, "Site Username")
-
-            def on_enter(e):
-                siteusername_Entry.delete(0, END)
-            def on_leave(e):
-                if siteusername_Entry.get() == "":
-                    siteusername_Entry.insert(0, "Site Username")
-
-            siteusername_Entry.bind("<FocusIn>", on_enter)
-            siteusername_Entry.bind("<FocusOut>", on_leave)
-
-###
-            sitepassword_Entry = tk.CTkEntry(master = Window)
-            sitepassword_Entry.place(x = 460, y = 300, width = 300, height = 30)
-
-            sitepassword_Entry.insert(0, "Site Password")
-
-            def on_enter(e):
-                sitepassword_Entry.delete(0, END)
-            def on_leave(e):
-                if sitepassword_Entry.get() == "":
-                    sitepassword_Entry.insert(0, "Site Password")
-
-            sitepassword_Entry.bind("<FocusIn>", on_enter)
-            sitepassword_Entry.bind("<FocusOut>", on_leave)
-
-###
+            data = "In order to add a password, please enter your \nrespective site name, site url, site username and email address that was \nused to register on the site"
+            L = tk.CTkLabel(master = Window, text = data, text_font = ("Calibri", 20), bg_color = hcolor)
+            L.place(x = 0, y = 0, width = 900, height = 600)
 
             Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command1)
             Button1.place(x = 441, y = 420, width = 350, height = 70)
@@ -209,6 +135,8 @@ class Window_Makers():
 
             Button2 = tk.CTkButton(master = Window, text = text2, text_color = "black", text_font = ("Times New Roman", 14), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command2, image = button_img, compound = "left")
             Button2.place(x = 10, y = 10, width = 121, height = 50)
+
+
 
 
         Window.title(window_title)
@@ -243,7 +171,19 @@ class Window_Makers():
     def Make_ret(self, Window, window_title, bgimg, fgcolor, hcolor, text1, text2, command1, command2):
         
         def ret_widgets(Window, fgcolor, hcolor, text1, text2, command1, command2):
-            pass
+            data = "In order to retrieve a password, please enter your respective site name \nand email address that was used to register on the site"
+            L = tk.CTkLabel(master = Window, text = data, text_font = ("Calibri", 20), bg_color = hcolor)
+            L.place(x = 0, y = 0, width = 900, height = 600)
+
+            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command1)
+            Button1.place(x = 441, y = 420, width = 350, height = 70)
+
+            img = Image.open(os.path.join("imgs","back_button.png"))
+            img = img.resize((50,50), resample = 0)
+            button_img = ImageTk.PhotoImage(img)       
+
+            Button2 = tk.CTkButton(master = Window, text = text2, text_color = "black", text_font = ("Times New Roman", 14), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command2, image = button_img, compound = "left")
+            Button2.place(x = 10, y = 10, width = 121, height = 50)
 
         Window.title(window_title)
         
@@ -276,7 +216,20 @@ class Window_Makers():
     def Make_del(self, Window, window_title, bgimg, fgcolor, hcolor, text1, text2, command1, command2):
         
         def del_widgets(Window, fgcolor, hcolor, text1, text2, command1, command2):
-            pass
+            data = "In order to delete a password, please enter your respective site name \nand email address that was used to register on the site"
+            L = tk.CTkLabel(master = Window, text = data, text_font = ("Calibri", 20), bg_color = hcolor)
+            L.place(x = 0, y = 0, width = 900, height = 600)
+
+
+            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command1)
+            Button1.place(x = 441, y = 420, width = 350, height = 70)
+
+            img = Image.open(os.path.join("imgs","back_button.png"))
+            img = img.resize((50,50), resample = 0)
+            button_img = ImageTk.PhotoImage(img)       
+
+            Button2 = tk.CTkButton(master = Window, text = text2, text_color = "black", text_font = ("Times New Roman", 14), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command2, image = button_img, compound = "left")
+            Button2.place(x = 10, y = 10, width = 121, height = 50)
 
         Window.title(window_title)
         
