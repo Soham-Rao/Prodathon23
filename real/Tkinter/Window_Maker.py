@@ -10,8 +10,30 @@ class Window_Maker():
         tk.set_appearance_mode("dark")
         tk.set_default_color_theme("dark-blue")
 
-    def Make_Win(self, Window, window_title, bgimg, text1, text2, text3, text4, fgcolor, hcolor, command1, command2, command3, command4):
-        
+
+
+    def Make_Home(self, Window, window_title, bgimg, text1, text2, text3, text4, fgcolor, hcolor, command1, command2, command3, command4):
+
+
+        def home_buttons(Window, text1, text2, text3, fgcolor, hcolor, command1, command2, command3):
+            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command1)
+            Button1.place(x = 510, y = 170, width = 350, height = 70)
+
+            Button2 = tk.CTkButton(master = Window, text = text2, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command2)
+            Button2.place(x = 510, y = 450, width = 350, height = 70)
+
+            Button4 = tk.CTkButton(master = Window, text = text4, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor, command = command4)
+            Button4.place(x = 510, y = 310, width = 350, height = 70)
+
+
+            img = Image.open(os.path.join("imgs","back_button.png"))
+            img = img.resize((50,50), resample = 0)
+            button_img = ImageTk.PhotoImage(img)       
+
+            Button3 = tk.CTkButton(master = Window, text = text3, text_color = "black", text_font = ("Times New Roman", 14), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command3, image = button_img, compound = "left")
+            Button3.place(x = 10, y = 10, width = 120, height = 50)
+
+
         Window.title(window_title)
         
         window_height = 600
@@ -34,4 +56,9 @@ class Window_Maker():
         background = tk.CTkLabel(master = Window, image = bg_img)
         background.place(x = 0, y = 0)
 
+        home_buttons(Window, text1, text2, text3, fgcolor, hcolor, command1, command2, command3)
+
         Window.mainloop()
+
+
+
