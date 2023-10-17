@@ -256,3 +256,39 @@ class Window_Makers():
         del_widgets(Window,fgcolor, hcolor, text1, text2, command1, command2)
 
         Window.mainloop()
+
+
+    def Info(self, Window, window_title, bgimg, hcolor):
+        
+        def Info_widgets(Window, hcolor):
+            with open ("info.txt", "r") as f:
+                data = f.read()
+
+            L = tk.CTkLabel(master = Window, text = data, text_font = ("Calibri", 30), bg_color = hcolor)
+            L.place(x = 0, y = 0)
+
+        Window.title(window_title)
+        
+        window_height = 400
+        window_width = 900
+
+        screen_width = Window.winfo_screenwidth()
+        screen_height = Window.winfo_screenheight()
+        
+        x_cordinate = int((screen_width/2) - (window_width/2))
+        y_cordinate = int(((screen_height/2) - (window_height/2))-50)
+
+        Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
+        Window.resizable(False, False)
+
+        bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
+        bgmg.save(os.path.join("imgs",bgimg+".png"))
+        img = bgmg.resize((window_width,window_height), resample = 0)
+        bg_img = ImageTk.PhotoImage(img)       
+
+        background = tk.CTkLabel(master = Window, image = bg_img)
+        background.place(x = 0, y = 0)
+
+        Info_widgets(Window, hcolor)
+
+        Window.mainloop()

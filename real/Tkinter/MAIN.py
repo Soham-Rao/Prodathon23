@@ -33,11 +33,7 @@ class Windows():
             self.Second_Window()
 
         def info():
-            pass
-            # try:
-            #     Window.destroy()
-            # except tkinter.TclError:
-            #     pass
+            self.info_Window()
 
         def login():
             self.login()
@@ -502,8 +498,6 @@ class Windows():
                 deswin()
             else:
                 messagebox.showinfo("Retrieved","The password has been successfully copied")
-                print(pw)
-                print("\n\n" + pw.decode() + "\n\n\n")
                 pyperclip.copy(pw.decode())
                 deswin()
 
@@ -616,7 +610,7 @@ class Windows():
 
         def dell():
             deswin()
-
+            self.del_details()
 
         def deswin():
             try:
@@ -630,12 +624,106 @@ class Windows():
 
 
 
+    def del_details(self):
+        del_Details_Window = tk.CTkToplevel()
+
+        del_Details_Window.title("Delete Password")
+        
+        window_height = 600
+        window_width = 900
+
+        screen_width = del_Details_Window.winfo_screenwidth()
+        screen_height = del_Details_Window.winfo_screenheight()
+        
+        x_cordinate = int((screen_width/2) - (window_width/2))
+        y_cordinate = int(((screen_height/2) - (window_height/2))-50)
+
+        del_Details_Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
+        del_Details_Window.resizable(False, False)
+
+        bgmg = Image.open(os.path.join("imgs","1stbg.jpg"))
+        bgmg.save(os.path.join("imgs","1stbg.png"))
+        img = bgmg.resize((window_width,window_height), resample = 0)
+        bg_img = ImageTk.PhotoImage(img)       
+
+        background = tk.CTkLabel(master = del_Details_Window, image = bg_img)
+        background.place(x = 0, y = 0)
+
+
+###            
+        sitename_Entry = tk.CTkEntry(master = del_Details_Window)
+        sitename_Entry.place(x = 460, y = 100, width = 300, height = 30)
+
+        sitename_Entry.insert(0, "Site name")
+
+        def on_enter(e):
+            sitename_Entry.delete(0, END)
+        def on_leave(e):
+            if sitename_Entry.get() == "":
+                sitename_Entry.insert(0, "Site name")
+
+        sitename_Entry.bind("<FocusIn>", on_enter)
+        sitename_Entry.bind("<FocusOut>", on_leave)
+
+###
+        email_Entry = tk.CTkEntry(master = del_Details_Window)
+        email_Entry.place(x = 460, y = 150, width = 300, height = 30)
+
+        email_Entry.insert(0, "Email")
+
+        def on_enter(e):
+            email_Entry.delete(0, END)
+        def on_leave(e):
+            if email_Entry.get() == "":
+                email_Entry.insert(0, "Email")
+
+        email_Entry.bind("<FocusIn>", on_enter)
+        email_Entry.bind("<FocusOut>", on_leave)
+
+
+        def deswin():
+            try:
+                del_Details_Window.destroy()
+            except tkinter.TclError:
+                pass
+
+        with open("temp1.txt", "r") as f:
+            username = f.read()
+
+        def delete():
+            db = dbconfig()
+            cursor = db.cursor()
+            query = "delete from prodathon." + username + " where sitename = '{}' and email = '{}';".format(sitename_Entry.get(), email_Entry.get())
+            cursor.execute(query)
+            messagebox.showinfo("deleted", "record has been deleted")
+
+            db.commit()
+            db.close()
+            deswin()
+
+        Button1 = tk.CTkButton(master = del_Details_Window, text = "Delete Password", text_font = ("Times New Roman", 30), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = delete)
+        Button1.place(x = 441, y = 420, width = 350, height = 70)
+
+        img = Image.open(os.path.join("imgs","back_button.png"))
+        img = img.resize((50,50), resample = 0)
+        button_img = ImageTk.PhotoImage(img)       
+
+        Button2 = tk.CTkButton(master = del_Details_Window, text = "back", text_color = "black", text_font = ("Times New Roman", 14), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = deswin, image = button_img, compound = "left")
+        Button2.place(x = 10, y = 10, width = 121, height = 50)
+
+
+        del_Details_Window.mainloop()
 
 
 
 
     def info_Window(self):
-        pass
+        Window = tk.CTkToplevel()
+        WM = Window_Makers()
+
+
+        WM.Info(Window = Window, window_title = "About", bgimg = "1stbg", hcolor = "#6f7a8f")
+
 
     def login(self):
         LWIN = tk.CTkToplevel()
