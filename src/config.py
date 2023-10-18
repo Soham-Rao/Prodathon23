@@ -1,4 +1,4 @@
-from Tkinter.utils.dbconfig import dbconfig
+from GUI.utils.dbconfig import dbconfig
 
 
 def config():
