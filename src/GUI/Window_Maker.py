@@ -21,28 +21,24 @@ class Window_Makers():
 
 
         def home_buttons(Window, text1, text2, text3, text4, fgcolor, hcolor, command1, command2, command3, command4):
-            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command1)
-            Button1.place(x = 510, y = 170, width = 350, height = 70)
+            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = fgcolor, hover_color = hcolor, border_color = fgcolor ,command = command1)
+            Button1.place(x = 550, y = 150, width = 300, height = 45)
 
-            Button2 = tk.CTkButton(master = Window, text = text2, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command2)
-            Button2.place(x = 510, y = 450, width = 350, height = 70)
 
-            Button4 = tk.CTkButton(master = Window, text = text4, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor, command = command4)
-            Button4.place(x = 510, y = 310, width = 350, height = 70)
+            Button2 = tk.CTkButton(master = Window, text = text4, text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = fgcolor, hover_color = hcolor, border_color = fgcolor, command = command4)
+            Button2.place(x = 550, y = 240, width = 300, height = 45)
 
 
             img = Image.open(os.path.join("imgs","back_button.png"))
             img = img.resize((50,50), resample = 0)
             button_img = ImageTk.PhotoImage(img)       
 
-            Button3 = tk.CTkButton(master = Window, text = text3, text_color = "black", text_font = ("Times New Roman", 14), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command3, image = button_img, compound = "left")
-            Button3.place(x = 10, y = 10, width = 121, height = 50)
 
 
         Window.title(window_title)
         
-        window_height = 600
-        window_width = 900
+        window_height = 540
+        window_width = 960
 
         screen_width = Window.winfo_screenwidth()
         screen_height = Window.winfo_screenheight()
@@ -71,28 +67,26 @@ class Window_Makers():
     def Make_pm(self, Window, window_title, bgimg, fgcolor, hcolor, text1, text2, text3, text4,  command1, command2, command3, command4):
         
         def pm_buttons(Window, fgcolor, hcolor, text1, text2, text3, text4,  command1, command2, command3, command4):
-            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command1)
-            Button1.place(x = 510, y = 170, width = 350, height = 70)
+            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = fgcolor, hover_color = hcolor, border_color = fgcolor ,command = command1)
+            Button1.place(x = 330, y = 150, width = 300, height = 45)
 
-            Button2 = tk.CTkButton(master = Window, text = text2, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command2)
-            Button2.place(x = 510, y = 310, width = 350, height = 70)
+            Button2 = tk.CTkButton(master = Window, text = text2, text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = fgcolor, hover_color = hcolor, border_color = fgcolor ,command = command2)
+            Button2.place(x = 330, y = 225, width = 300, height = 45)
 
-            Button3 = tk.CTkButton(master = Window, text = text3, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor, command = command3)
-            Button3.place(x = 510, y = 450, width = 350, height = 70)
+            Button3 = tk.CTkButton(master = Window, text = text3, text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = fgcolor, hover_color = hcolor, border_color = fgcolor, command = command3)
+            Button3.place(x = 330, y = 300, width = 300, height = 45)
 
             img = Image.open(os.path.join("imgs","back_button.png"))
             img = img.resize((50,50), resample = 0)
             button_img = ImageTk.PhotoImage(img)       
 
-            Button4 = tk.CTkButton(master = Window, text = text4, text_color = "black", text_font = ("Times New Roman", 14), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command4, image = button_img, compound = "left")
-            Button4.place(x = 10, y = 10, width = 121, height = 50)
 
 
 
         Window.title(window_title)
         
-        window_height = 600
-        window_width = 900
+        window_height = 540
+        window_width = 960
 
         screen_width = Window.winfo_screenwidth()
         screen_height = Window.winfo_screenheight()
@@ -124,25 +118,23 @@ class Window_Makers():
         def add_widgets(Window, fgcolor, hcolor, text1, text2, command1, command2):
             data = "In order to add a password, please enter your \nrespective site name, site url, site username and email address that was \nused to register on the site"
             L = tk.CTkLabel(master = Window, text = data, text_font = ("Calibri", 20), bg_color = hcolor)
-            L.place(x = 0, y = 0, width = 900, height = 600)
+            L.place(x = 0, y = 0, width = 960, height = 540)
 
-            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command1)
+            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = fgcolor, hover_color = hcolor, border_color = fgcolor ,command = command1)
             Button1.place(x = 441, y = 420, width = 350, height = 70)
 
             img = Image.open(os.path.join("imgs","back_button.png"))
             img = img.resize((50,50), resample = 0)
             button_img = ImageTk.PhotoImage(img)       
 
-            Button2 = tk.CTkButton(master = Window, text = text2, text_color = "black", text_font = ("Times New Roman", 14), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command2, image = button_img, compound = "left")
-            Button2.place(x = 10, y = 10, width = 121, height = 50)
 
 
 
 
         Window.title(window_title)
         
-        window_height = 600
-        window_width = 900
+        window_height = 540
+        window_width = 960
 
         screen_width = Window.winfo_screenwidth()
         screen_height = Window.winfo_screenheight()
@@ -173,22 +165,20 @@ class Window_Makers():
         def ret_widgets(Window, fgcolor, hcolor, text1, text2, command1, command2):
             data = "In order to retrieve a password, please enter your respective site name \nand email address that was used to register on the site"
             L = tk.CTkLabel(master = Window, text = data, text_font = ("Calibri", 20), bg_color = hcolor)
-            L.place(x = 0, y = 0, width = 900, height = 600)
+            L.place(x = 0, y = 0, width = 960, height = 540)
 
-            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command1)
+            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = fgcolor, hover_color = hcolor, border_color = fgcolor ,command = command1)
             Button1.place(x = 441, y = 420, width = 350, height = 70)
 
             img = Image.open(os.path.join("imgs","back_button.png"))
             img = img.resize((50,50), resample = 0)
             button_img = ImageTk.PhotoImage(img)       
 
-            Button2 = tk.CTkButton(master = Window, text = text2, text_color = "black", text_font = ("Times New Roman", 14), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command2, image = button_img, compound = "left")
-            Button2.place(x = 10, y = 10, width = 121, height = 50)
-
+     
         Window.title(window_title)
         
-        window_height = 600
-        window_width = 900
+        window_height = 540
+        window_width = 960
 
         screen_width = Window.winfo_screenwidth()
         screen_height = Window.winfo_screenheight()
@@ -218,23 +208,21 @@ class Window_Makers():
         def del_widgets(Window, fgcolor, hcolor, text1, text2, command1, command2):
             data = "In order to delete a password, please enter your respective site name \nand email address that was used to register on the site"
             L = tk.CTkLabel(master = Window, text = data, text_font = ("Calibri", 20), bg_color = hcolor)
-            L.place(x = 0, y = 0, width = 900, height = 600)
+            L.place(x = 0, y = 0, width = 960, height = 540)
 
 
-            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Times New Roman", 30), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command1)
+            Button1 = tk.CTkButton(master = Window, text = text1, text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = fgcolor, hover_color = hcolor, border_color = fgcolor ,command = command1)
             Button1.place(x = 441, y = 420, width = 350, height = 70)
 
             img = Image.open(os.path.join("imgs","back_button.png"))
             img = img.resize((50,50), resample = 0)
             button_img = ImageTk.PhotoImage(img)       
 
-            Button2 = tk.CTkButton(master = Window, text = text2, text_color = "black", text_font = ("Times New Roman", 14), fg_color = fgcolor, hover_color = hcolor, bg_color = fgcolor ,command = command2, image = button_img, compound = "left")
-            Button2.place(x = 10, y = 10, width = 121, height = 50)
-
+      
         Window.title(window_title)
         
-        window_height = 600
-        window_width = 900
+        window_height = 540
+        window_width = 960
 
         screen_width = Window.winfo_screenwidth()
         screen_height = Window.winfo_screenheight()
@@ -269,8 +257,8 @@ class Window_Makers():
 
         Window.title(window_title)
         
-        window_height = 400
-        window_width = 900
+        window_height = 540
+        window_width = 960
 
         screen_width = Window.winfo_screenwidth()
         screen_height = Window.winfo_screenheight()

@@ -45,7 +45,7 @@ class Windows():
                 pass
 
 
-        WM.Make_Home(Window = Window, window_title = "Password Manager", bgimg = "1stbg", text1 = "Login/Logout", text2 = "About", text3 = "Exit", text4 = "Manage Passwords", fgcolor = "#535359", hcolor = "#82828c", command1 = login, command2 = info, command3 = close, command4 = open_win2)
+        WM.Make_Home(Window = Window, window_title = "Password Manager", bgimg = "1stbg", text1 = "Login", text2 = "About", text3 = "Exit", text4 = "Manage Passwords", fgcolor = "#50bdcc", hcolor = "#63ecff", command1 = login, command2 = info, command3 = close, command4 = open_win2)
 
 
     def Second_Window(self):
@@ -71,7 +71,7 @@ class Windows():
 
             
 
-        WM.Make_pm(Window = PM_Window, window_title = "Password Manager", bgimg = "1stbg", fgcolor = "#535359", hcolor = "#82828c", text1 = "Add password", text2 = "Retrieve password", text3 = "Delete password", text4 = "back", command1 = add, command2 = retrieve, command3 = delete, command4 = deswin)
+        WM.Make_pm(Window = PM_Window, window_title = "Password Manager", bgimg = "2ndbg", fgcolor = "#50bdcc", hcolor = "#63ecff", text1 = "Add password", text2 = "Retrieve password", text3 = "Delete password", text4 = "back", command1 = add, command2 = retrieve, command3 = delete, command4 = deswin)
 
 
 
@@ -93,11 +93,17 @@ class Windows():
         Add_Check_Window.resizable(False, False)
 
 
-        Add_Check_Window['background'] = "#6f7a8f"
+        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        bgmg.save(os.path.join("imgs","2ndbg.png"))
+        img = bgmg.resize((window_width,window_height), resample = 0)
+        bg_img = ImageTk.PhotoImage(img)       
+
+        background = tk.CTkLabel(master = Add_Check_Window, image = bg_img)
+        background.place(x = 0, y = 0)
 
 
 
-        MP = tk.CTkEntry(master = Add_Check_Window)
+        MP = tk.CTkEntry(master = Add_Check_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
         MP.place(x = 50, y = 50, width = 300, height = 30)
 
         MP.insert(0, "Master Password")
@@ -137,7 +143,7 @@ class Windows():
 
             if data:
                 deswin()
-                self.Add_Window()
+                self.add_details()
                 
 
             else:
@@ -152,8 +158,8 @@ class Windows():
 
 
 
-        Button1 = tk.CTkButton(master = Add_Check_Window, text = "verify", text_font = ("Times New Roman", 28), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = sql_login)
-        Button1.place(x = 100, y = 110, width = 200, height = 50)
+        Button1 = tk.CTkButton(master = Add_Check_Window, text = "verify", text_font = ("Cascadia Code", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = sql_login)
+        Button1.place(x = 136, y = 110, width = 120, height = 30)
 
 
 
@@ -180,7 +186,7 @@ class Windows():
 
             
 
-        WM.Make_add(Window = AddPW_Window, window_title = "Add password", bgimg = "1stbg", fgcolor = "#535359", hcolor = "#82828c", text1 = "Enter Details", text2 = "Back", command1 = add, command2 = deswin)
+        WM.Make_add(Window = AddPW_Window, window_title = "Add password", bgimg = "2ndbg", fgcolor = "#50bdcc", hcolor = "#63ecff", text1 = "Enter Details", text2 = "Back", command1 = add, command2 = deswin)
 
 
 
@@ -189,8 +195,8 @@ class Windows():
 
         Add_Details_Window.title("Generate Password")
         
-        window_height = 600
-        window_width = 900
+        window_height = 540
+        window_width = 960
 
         screen_width = Add_Details_Window.winfo_screenwidth()
         screen_height = Add_Details_Window.winfo_screenheight()
@@ -201,8 +207,8 @@ class Windows():
         Add_Details_Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Add_Details_Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs","1stbg.jpg"))
-        bgmg.save(os.path.join("imgs","1stbg.png"))
+        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        bgmg.save(os.path.join("imgs","2ndbg.png"))
         img = bgmg.resize((window_width,window_height), resample = 0)
         bg_img = ImageTk.PhotoImage(img)       
 
@@ -211,8 +217,8 @@ class Windows():
 
 
 ###            
-        sitename_Entry = tk.CTkEntry(master = Add_Details_Window)
-        sitename_Entry.place(x = 460, y = 100, width = 300, height = 30)
+        sitename_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
+        sitename_Entry.place(x = 330, y = 100, width = 300, height = 30)
 
         sitename_Entry.insert(0, "Site name")
 
@@ -226,8 +232,8 @@ class Windows():
         sitename_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        siteurl_Entry = tk.CTkEntry(master = Add_Details_Window)
-        siteurl_Entry.place(x = 460, y = 150, width = 300, height = 30)
+        siteurl_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
+        siteurl_Entry.place(x = 330, y = 150, width = 300, height = 30)
 
         siteurl_Entry.insert(0, "Site URL")
 
@@ -241,8 +247,8 @@ class Windows():
         siteurl_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        email_Entry = tk.CTkEntry(master = Add_Details_Window)
-        email_Entry.place(x = 460, y = 200, width = 300, height = 30)
+        email_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
+        email_Entry.place(x = 330, y = 200, width = 300, height = 30)
 
         email_Entry.insert(0, "Email")
 
@@ -256,8 +262,8 @@ class Windows():
         email_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        siteusername_Entry = tk.CTkEntry(master = Add_Details_Window)
-        siteusername_Entry.place(x = 460, y = 250, width = 300, height = 30)
+        siteusername_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
+        siteusername_Entry.place(x = 330, y = 250, width = 300, height = 30)
 
         siteusername_Entry.insert(0, "Site Username")
 
@@ -293,15 +299,12 @@ class Windows():
             messagebox.showinfo("Success", "Seccessfully added password to database")
             deswin()
 
-        Button1 = tk.CTkButton(master = Add_Details_Window, text = "Generate Password", text_font = ("Times New Roman", 30), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = generate)
-        Button1.place(x = 441, y = 420, width = 350, height = 70)
+        Button1 = tk.CTkButton(master = Add_Details_Window, text = "Generate Password", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = generate)
+        Button1.place(x = 328, y = 320, width = 300, height = 40)
 
         img = Image.open(os.path.join("imgs","back_button.png"))
         img = img.resize((50,50), resample = 0)
         button_img = ImageTk.PhotoImage(img)       
-
-        Button2 = tk.CTkButton(master = Add_Details_Window, text = "back", text_color = "black", text_font = ("Times New Roman", 14), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = deswin, image = button_img, compound = "left")
-        Button2.place(x = 10, y = 10, width = 121, height = 50)
 
 
         Add_Details_Window.mainloop()
@@ -328,11 +331,17 @@ class Windows():
         Retrieve_Check_Window.resizable(False, False)
 
 
-        Retrieve_Check_Window['background'] = "#6f7a8f"
+        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        bgmg.save(os.path.join("imgs","2ndbg.png"))
+        img = bgmg.resize((window_width,window_height), resample = 0)
+        bg_img = ImageTk.PhotoImage(img)       
+
+        background = tk.CTkLabel(master = Retrieve_Check_Window, image = bg_img)
+        background.place(x = 0, y = 0)
 
 
 
-        MP = tk.CTkEntry(master = Retrieve_Check_Window)
+        MP = tk.CTkEntry(master = Retrieve_Check_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
         MP.place(x = 50, y = 50, width = 300, height = 30)
 
         MP.insert(0, "Master Password")
@@ -370,7 +379,7 @@ class Windows():
 
             if data:
                 deswin()
-                self.Retrieve_Window()
+                self.ret_details()
                 
 
             else:
@@ -386,8 +395,8 @@ class Windows():
 
 
 
-        Button1 = tk.CTkButton(master = Retrieve_Check_Window, text = "verify", text_font = ("Times New Roman", 28), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = sql_login)
-        Button1.place(x = 100, y = 110, width = 200, height = 50)
+        Button1 = tk.CTkButton(master = Retrieve_Check_Window, text = "verify", text_font = ("Cascadia Code", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = sql_login)
+        Button1.place(x = 136, y = 110, width = 120, height = 30)
 
 
 
@@ -414,7 +423,7 @@ class Windows():
 
             
 
-        WM.Make_ret(Window = RetPW_Window, window_title = "Retrieve password", bgimg = "1stbg", fgcolor = "#535359", hcolor = "#82828c", text1 = "Retrieve", text2 = "Back", command1 = retrieve, command2 = deswin)
+        WM.Make_ret(Window = RetPW_Window, window_title = "Retrieve password", bgimg = "2ndbg", fgcolor = "#50bdcc", hcolor = "#63ecff", text1 = "Retrieve", text2 = "Back", command1 = retrieve, command2 = deswin)
 
 
 
@@ -423,8 +432,8 @@ class Windows():
 
         Ret_Details_Window.title("Retrieve Password")
         
-        window_height = 600
-        window_width = 900
+        window_height = 540
+        window_width = 960
 
         screen_width = Ret_Details_Window.winfo_screenwidth()
         screen_height = Ret_Details_Window.winfo_screenheight()
@@ -435,8 +444,8 @@ class Windows():
         Ret_Details_Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Ret_Details_Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs","1stbg.jpg"))
-        bgmg.save(os.path.join("imgs","1stbg.png"))
+        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        bgmg.save(os.path.join("imgs","2ndbg.png"))
         img = bgmg.resize((window_width,window_height), resample = 0)
         bg_img = ImageTk.PhotoImage(img)       
 
@@ -445,8 +454,8 @@ class Windows():
 
 
 ###            
-        sitename_Entry = tk.CTkEntry(master = Ret_Details_Window)
-        sitename_Entry.place(x = 460, y = 100, width = 300, height = 30)
+        sitename_Entry = tk.CTkEntry(master = Ret_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
+        sitename_Entry.place(x = 330, y = 200, width = 300, height = 30)
 
         sitename_Entry.insert(0, "Site name")
 
@@ -460,8 +469,8 @@ class Windows():
         sitename_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        email_Entry = tk.CTkEntry(master = Ret_Details_Window)
-        email_Entry.place(x = 460, y = 150, width = 300, height = 30)
+        email_Entry = tk.CTkEntry(master = Ret_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
+        email_Entry.place(x = 330, y = 250, width = 300, height = 30)
 
         email_Entry.insert(0, "Email")
 
@@ -501,15 +510,12 @@ class Windows():
                 pyperclip.copy(pw.decode())
                 deswin()
 
-        Button1 = tk.CTkButton(master = Ret_Details_Window, text = "Retrieve Password", text_font = ("Times New Roman", 30), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = retrieve)
-        Button1.place(x = 441, y = 420, width = 350, height = 70)
+        Button1 = tk.CTkButton(master = Ret_Details_Window, text = "Retrieve Password", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = retrieve)
+        Button1.place(x = 328, y = 320, width = 300, height = 40)
 
         img = Image.open(os.path.join("imgs","back_button.png"))
         img = img.resize((50,50), resample = 0)
         button_img = ImageTk.PhotoImage(img)       
-
-        Button2 = tk.CTkButton(master = Ret_Details_Window, text = "back", text_color = "black", text_font = ("Times New Roman", 14), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = deswin, image = button_img, compound = "left")
-        Button2.place(x = 10, y = 10, width = 121, height = 50)
 
 
         Ret_Details_Window.mainloop()
@@ -536,11 +542,17 @@ class Windows():
         Delete_Check_Window.resizable(False, False)
 
 
-        Delete_Check_Window['background'] = "#6f7a8f"
+        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        bgmg.save(os.path.join("imgs","2ndbg.png"))
+        img = bgmg.resize((window_width,window_height), resample = 0)
+        bg_img = ImageTk.PhotoImage(img)       
+
+        background = tk.CTkLabel(master = Delete_Check_Window, image = bg_img)
+        background.place(x = 0, y = 0)
 
 
 
-        MP = tk.CTkEntry(master = Delete_Check_Window)
+        MP = tk.CTkEntry(master = Delete_Check_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
         MP.place(x = 50, y = 50, width = 300, height = 30)
 
         MP.insert(0, "Master Password")
@@ -578,7 +590,7 @@ class Windows():
 
             if data:
                 deswin()
-                self.Delete_Window()
+                self.del_details()
                 
 
             else:
@@ -593,8 +605,8 @@ class Windows():
 
 
 
-        Button1 = tk.CTkButton(master = Delete_Check_Window, text = "verify", text_font = ("Times New Roman", 28), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = sql_login)
-        Button1.place(x = 100, y = 110, width = 200, height = 50)
+        Button1 = tk.CTkButton(master = Delete_Check_Window, text = "verify", text_font = ("Cascadia Code", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = sql_login)
+        Button1.place(x = 136, y = 110, width = 120, height = 30)
 
 
 
@@ -620,7 +632,7 @@ class Windows():
 
             
 
-        WM.Make_del(Window = delPW_Window, window_title = "Delete password", bgimg = "1stbg", fgcolor = "#535359", hcolor = "#82828c", text1 = "Delete", text2 = "Back", command1 = dell, command2 = deswin)
+        WM.Make_del(Window = delPW_Window, window_title = "Delete password", bgimg = "2ndbg", fgcolor = "#50bdcc", hcolor = "#63ecff", text1 = "Delete", text2 = "Back", command1 = dell, command2 = deswin)
 
 
 
@@ -629,8 +641,8 @@ class Windows():
 
         del_Details_Window.title("Delete Password")
         
-        window_height = 600
-        window_width = 900
+        window_height = 540
+        window_width = 960
 
         screen_width = del_Details_Window.winfo_screenwidth()
         screen_height = del_Details_Window.winfo_screenheight()
@@ -641,8 +653,8 @@ class Windows():
         del_Details_Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         del_Details_Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs","1stbg.jpg"))
-        bgmg.save(os.path.join("imgs","1stbg.png"))
+        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        bgmg.save(os.path.join("imgs","2ndbg.png"))
         img = bgmg.resize((window_width,window_height), resample = 0)
         bg_img = ImageTk.PhotoImage(img)       
 
@@ -651,8 +663,8 @@ class Windows():
 
 
 ###            
-        sitename_Entry = tk.CTkEntry(master = del_Details_Window)
-        sitename_Entry.place(x = 460, y = 100, width = 300, height = 30)
+        sitename_Entry = tk.CTkEntry(master = del_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
+        sitename_Entry.place(x = 330, y = 200, width = 300, height = 30)
 
         sitename_Entry.insert(0, "Site name")
 
@@ -666,8 +678,8 @@ class Windows():
         sitename_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        email_Entry = tk.CTkEntry(master = del_Details_Window)
-        email_Entry.place(x = 460, y = 150, width = 300, height = 30)
+        email_Entry = tk.CTkEntry(master = del_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
+        email_Entry.place(x = 330, y = 250, width = 300, height = 30)
 
         email_Entry.insert(0, "Email")
 
@@ -701,15 +713,12 @@ class Windows():
             db.close()
             deswin()
 
-        Button1 = tk.CTkButton(master = del_Details_Window, text = "Delete Password", text_font = ("Times New Roman", 30), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = delete)
-        Button1.place(x = 441, y = 420, width = 350, height = 70)
+        Button1 = tk.CTkButton(master = del_Details_Window, text = "Delete Password", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = delete)
+        Button1.place(x = 328, y = 320, width = 300, height = 40)
 
         img = Image.open(os.path.join("imgs","back_button.png"))
         img = img.resize((50,50), resample = 0)
         button_img = ImageTk.PhotoImage(img)       
-
-        Button2 = tk.CTkButton(master = del_Details_Window, text = "back", text_color = "black", text_font = ("Times New Roman", 14), fg_color = "#535359", hover_color = "#82828c", bg_color = "#535359" ,command = deswin, image = button_img, compound = "left")
-        Button2.place(x = 10, y = 10, width = 121, height = 50)
 
 
         del_Details_Window.mainloop()
@@ -722,13 +731,13 @@ class Windows():
         WM = Window_Makers()
 
 
-        WM.Info(Window = Window, window_title = "About", bgimg = "1stbg", hcolor = "#6f7a8f")
+        WM.Info(Window = Window, window_title = "About", bgimg = "2ndbg", hcolor = "#6f7a8f")
 
 
     def login(self):
         LWIN = tk.CTkToplevel()
         WM = Login_Window()
-        WM.Make_Win(Window = LWIN, window_title = "Login", bgimg = "1stbg")
+        WM.Make_Win(Window = LWIN, window_title = "Login", bgimg = "2ndbg")
 
 
 
