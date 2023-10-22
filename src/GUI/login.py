@@ -52,8 +52,8 @@ class Login_Window():
 
 
     def widgetmaker(self, Window, bgimg):
-        user_Entry = tk.CTkEntry(master = Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        user_Entry.place(x = 163, y = 70, width = 320, height = 30)
+        user_Entry = tk.CTkEntry(master = Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 320, height = 30)
+        user_Entry.place(x = 163, y = 70)
 
         user_Entry.insert(0, "Username")
 
@@ -66,8 +66,8 @@ class Login_Window():
         user_Entry.bind("<FocusIn>", on_enter)
         user_Entry.bind("<FocusOut>", on_leave)
 
-        pass_Entry = tk.CTkEntry(master = Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", show = "*")
-        pass_Entry.place(x = 163, y = 120, width = 320, height = 30)
+        pass_Entry = tk.CTkEntry(master = Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", show = "*", width = 320, height = 30)
+        pass_Entry.place(x = 163, y = 120)
 
         pass_Entry.insert(0, "Password")
 
@@ -150,18 +150,18 @@ class Login_Window():
         logout_img = ImageTk.PhotoImage(img2)
 
         #buttons
-        login_button = tk.CTkButton(master = Window, text = "Login", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = sql_login)
-        login_button.place(x = 270, y = 170, width = 100, height = 50)
+        login_button = tk.CTkButton(master = Window, text = "Login", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = sql_login, width = 100, height = 50)
+        login_button.place(x = 270, y = 170)
 
-        reg_question = tk.CTkLabel(master = Window, text = "Dont have an account yet?",text_font = ("Calibri", 13),  fg_color = "#5c5c63")
-#       reg_question.place(x = 210, y = 280, width = 200, height = 20)
+        reg_question = tk.CTkLabel(master = Window, text = "Dont have an account yet?",font = ("Calibri", 13),  fg_color = "#5c5c63", width = 200, height = 20)
+#       reg_question.place(x = 210, y = 280)
 
-        register_button = tk.CTkButton(master = Window, text = "Register", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = register)
-        register_button.place(x = 264, y = 240, width = 110, height = 50)
+        register_button = tk.CTkButton(master = Window, text = "Register", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = register, width = 110, height = 50)
+        register_button.place(x = 264, y = 240)
 
   
-        logout_button = tk.CTkButton(master = Window, text = "Logout", text_color = "black", text_font = ("Cascadia Code SemiBold", 10), fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = logoff, image = logout_img, compound = "right")
-        logout_button.place(x = 20, y = 8, width = 100, height = 30)
+        logout_button = tk.CTkButton(master = Window, text = "Logout", text_color = "black", font = ("Cascadia Code SemiBold", 10), fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = logoff, image = logout_img, compound = "right", width = 100, height = 30)
+        logout_button.place(x = 20, y = 8)
 
 
     def reg_window(self, bgimg):
@@ -192,8 +192,8 @@ class Login_Window():
 
 
 
-        ruser_Entry = tk.CTkEntry(master = register_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        ruser_Entry.place(x = 163, y = 50, width = 320, height = 30)
+        ruser_Entry = tk.CTkEntry(master = register_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 320, height = 30)
+        ruser_Entry.place(x = 163, y = 50)
 
         ruser_Entry.insert(0, "Username")
 
@@ -208,8 +208,8 @@ class Login_Window():
         ruser_Entry.bind("<FocusOut>", on_leave)
 
 
-        rpass_Entry = tk.CTkEntry(master = register_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        rpass_Entry.place(x = 163, y = 100, width = 320, height = 30)
+        rpass_Entry = tk.CTkEntry(master = register_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 320, height = 30)
+        rpass_Entry.place(x = 163, y = 100)
 
         rpass_Entry.insert(0, "MASTER Password")
 
@@ -222,8 +222,8 @@ class Login_Window():
         rpass_Entry.bind("<FocusIn>", on_enter)
         rpass_Entry.bind("<FocusOut>", on_leave)
 
-        re_pass_Entry = tk.CTkEntry(master = register_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        re_pass_Entry.place(x = 163, y = 150, width = 320, height = 30)
+        re_pass_Entry = tk.CTkEntry(master = register_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 320, height = 30)
+        re_pass_Entry.place(x = 163, y = 150)
 
         re_pass_Entry.insert(0, "Re-Enter Password")
 
@@ -279,14 +279,14 @@ class Login_Window():
         button_img = ImageTk.PhotoImage(img)
 
         #buttons
-        register_button_2 = tk.CTkButton(master = register_Window, text = "Register", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = sql_register)
-        register_button_2.place(x = 270, y = 200, width = 110, height = 50)
+        register_button_2 = tk.CTkButton(master = register_Window, text = "Register", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = sql_register, width = 110, height = 50)
+        register_button_2.place(x = 270, y = 200)
 
-        login_question = tk.CTkLabel(master = register_Window, text = "Already have an account?",text_font = ("Calibri", 13), fg_color = "#5c5c63")
-#       login_question.place(x = 205, y = 270, width = 200, height = 20)
+        login_question = tk.CTkLabel(master = register_Window, text = "Already have an account?",font = ("Calibri", 13), fg_color = "#5c5c63", width = 200, height = 20)
+#       login_question.place(x = 205, y = 270)
 
-        login_button = tk.CTkButton(master = register_Window, text = "Login", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = lambda:destroy())
-#       login_button.place(x = 243, y = 300, width = 100, height = 50)
+        login_button = tk.CTkButton(master = register_Window, text = "Login", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = lambda:destroy(), width = 100, height = 50)
+#       login_button.place(x = 243, y = 300)
 
  
         register_Window.mainloop()

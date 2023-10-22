@@ -103,8 +103,8 @@ class Windows():
 
 
 
-        MP = tk.CTkEntry(master = Add_Check_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        MP.place(x = 50, y = 50, width = 300, height = 30)
+        MP = tk.CTkEntry(master = Add_Check_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        MP.place(x = 50, y = 50)
 
         MP.insert(0, "Master Password")
 
@@ -158,8 +158,8 @@ class Windows():
 
 
 
-        Button1 = tk.CTkButton(master = Add_Check_Window, text = "verify", text_font = ("Cascadia Code", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = sql_login)
-        Button1.place(x = 136, y = 110, width = 120, height = 30)
+        Button1 = tk.CTkButton(master = Add_Check_Window, text = "verify", font = ("Cascadia Code", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = sql_login, width = 120, height = 30)
+        Button1.place(x = 136, y = 110)
 
 
 
@@ -217,8 +217,8 @@ class Windows():
 
 
 ###            
-        sitename_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        sitename_Entry.place(x = 330, y = 100, width = 300, height = 30)
+        sitename_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        sitename_Entry.place(x = 330, y = 100)
 
         sitename_Entry.insert(0, "Site name")
 
@@ -232,8 +232,8 @@ class Windows():
         sitename_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        siteurl_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        siteurl_Entry.place(x = 330, y = 150, width = 300, height = 30)
+        siteurl_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        siteurl_Entry.place(x = 330, y = 150)
 
         siteurl_Entry.insert(0, "Site URL")
 
@@ -247,8 +247,8 @@ class Windows():
         siteurl_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        email_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        email_Entry.place(x = 330, y = 200, width = 300, height = 30)
+        email_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        email_Entry.place(x = 330, y = 200)
 
         email_Entry.insert(0, "Email")
 
@@ -262,8 +262,8 @@ class Windows():
         email_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        siteusername_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        siteusername_Entry.place(x = 330, y = 250, width = 300, height = 30)
+        siteusername_Entry = tk.CTkEntry(master = Add_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        siteusername_Entry.place(x = 330, y = 250)
 
         siteusername_Entry.insert(0, "Site Username")
 
@@ -299,8 +299,8 @@ class Windows():
             messagebox.showinfo("Success", "Seccessfully added password to database")
             deswin()
 
-        Button1 = tk.CTkButton(master = Add_Details_Window, text = "Generate Password", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = generate)
-        Button1.place(x = 328, y = 320, width = 300, height = 40)
+        Button1 = tk.CTkButton(master = Add_Details_Window, text = "Generate Password", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = generate, width = 300, height = 40)
+        Button1.place(x = 328, y = 320)
 
         img = Image.open(os.path.join("imgs","back_button.png"))
         img = img.resize((50,50), resample = 0)
@@ -341,8 +341,8 @@ class Windows():
 
 
 
-        MP = tk.CTkEntry(master = Retrieve_Check_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        MP.place(x = 50, y = 50, width = 300, height = 30)
+        MP = tk.CTkEntry(master = Retrieve_Check_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        MP.place(x = 50, y = 50)
 
         MP.insert(0, "Master Password")
 
@@ -395,8 +395,8 @@ class Windows():
 
 
 
-        Button1 = tk.CTkButton(master = Retrieve_Check_Window, text = "verify", text_font = ("Cascadia Code", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = sql_login)
-        Button1.place(x = 136, y = 110, width = 120, height = 30)
+        Button1 = tk.CTkButton(master = Retrieve_Check_Window, text = "verify", font = ("Cascadia Code", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = sql_login, width = 120, height = 30)
+        Button1.place(x = 136, y = 110)
 
 
 
@@ -454,8 +454,8 @@ class Windows():
 
 
 ###            
-        sitename_Entry = tk.CTkEntry(master = Ret_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        sitename_Entry.place(x = 330, y = 200, width = 300, height = 30)
+        sitename_Entry = tk.CTkEntry(master = Ret_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        sitename_Entry.place(x = 330, y = 200)
 
         sitename_Entry.insert(0, "Site name")
 
@@ -469,8 +469,8 @@ class Windows():
         sitename_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        email_Entry = tk.CTkEntry(master = Ret_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        email_Entry.place(x = 330, y = 250, width = 300, height = 30)
+        email_Entry = tk.CTkEntry(master = Ret_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        email_Entry.place(x = 330, y = 250)
 
         email_Entry.insert(0, "Email")
 
@@ -510,8 +510,8 @@ class Windows():
                 pyperclip.copy(pw.decode())
                 deswin()
 
-        Button1 = tk.CTkButton(master = Ret_Details_Window, text = "Retrieve Password", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = retrieve)
-        Button1.place(x = 328, y = 320, width = 300, height = 40)
+        Button1 = tk.CTkButton(master = Ret_Details_Window, text = "Retrieve Password", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = retrieve, width = 300, height = 40)
+        Button1.place(x = 328, y = 320)
 
         img = Image.open(os.path.join("imgs","back_button.png"))
         img = img.resize((50,50), resample = 0)
@@ -552,8 +552,8 @@ class Windows():
 
 
 
-        MP = tk.CTkEntry(master = Delete_Check_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        MP.place(x = 50, y = 50, width = 300, height = 30)
+        MP = tk.CTkEntry(master = Delete_Check_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        MP.place(x = 50, y = 50)
 
         MP.insert(0, "Master Password")
 
@@ -605,8 +605,8 @@ class Windows():
 
 
 
-        Button1 = tk.CTkButton(master = Delete_Check_Window, text = "verify", text_font = ("Cascadia Code", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = sql_login)
-        Button1.place(x = 136, y = 110, width = 120, height = 30)
+        Button1 = tk.CTkButton(master = Delete_Check_Window, text = "verify", font = ("Cascadia Code", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = sql_login, width = 120, height = 30)
+        Button1.place(x = 136, y = 110)
 
 
 
@@ -663,8 +663,8 @@ class Windows():
 
 
 ###            
-        sitename_Entry = tk.CTkEntry(master = del_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        sitename_Entry.place(x = 330, y = 200, width = 300, height = 30)
+        sitename_Entry = tk.CTkEntry(master = del_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        sitename_Entry.place(x = 330, y = 200)
 
         sitename_Entry.insert(0, "Site name")
 
@@ -678,8 +678,8 @@ class Windows():
         sitename_Entry.bind("<FocusOut>", on_leave)
 
 ###
-        email_Entry = tk.CTkEntry(master = del_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000")
-        email_Entry.place(x = 330, y = 250, width = 300, height = 30)
+        email_Entry = tk.CTkEntry(master = del_Details_Window, fg_color = "#adffff", border_color = "#00ffff", text_color = "#000000", width = 300, height = 30)
+        email_Entry.place(x = 330, y = 250)
 
         email_Entry.insert(0, "Email")
 
@@ -713,8 +713,8 @@ class Windows():
             db.close()
             deswin()
 
-        Button1 = tk.CTkButton(master = del_Details_Window, text = "Delete Password", text_font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = delete)
-        Button1.place(x = 328, y = 320, width = 300, height = 40)
+        Button1 = tk.CTkButton(master = del_Details_Window, text = "Delete Password", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = delete, width = 300, height = 40)
+        Button1.place(x = 328, y = 320)
 
         img = Image.open(os.path.join("imgs","back_button.png"))
         img = img.resize((50,50), resample = 0)
