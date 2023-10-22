@@ -1,6 +1,6 @@
 from utils.dbconfig import dbconfig
-from Cryptodome.Protocol.KDF import PBKDF2
-from Cryptodome.Hash import SHA512
+from Crypto.Protocol.KDF import PBKDF2
+from Crypto.Hash import SHA512
 
 import utils.encrypter
 

@@ -9,8 +9,8 @@ from login import Login_Window
 from utils.dbconfig import dbconfig
 from utils.adder import addEntry
 from utils.retriever import retrieveEntry
-from Cryptodome.Protocol.KDF import PBKDF2
-from Cryptodome.Hash import SHA512
+from Crypto.Protocol.KDF import PBKDF2
+from Crypto.Hash import SHA512
 import random
 import string
 import pyperclip
