@@ -87,6 +87,12 @@ class Login_Window():
 
         Window.bind("<Return>", on_enter_press)
 
+        def deswin():
+            try:
+                Window.destroy()
+            except tkinter.TclError:
+                pass
+
         def sql_login():
             db = dbconfig()
             cursor = db.cursor()
@@ -112,17 +118,13 @@ class Login_Window():
                 
                 
             else:
+                deswin()
                 messagebox.showerror("","Incorrect Username or Password")
                 db.close()
-                user_Entry.delete(0, END)
-                pass_Entry.delete(0, END)
 
 
-        def deswin():
-            try:
-                Window.destroy()
-            except tkinter.TclError:
-                pass
+
+
 
         def register():
             deswin()
@@ -259,11 +261,9 @@ class Login_Window():
 
             if password == re_enter and len(password) > 4:
                 new_user(username, password)
-                messagebox.showinfo("","Registered Successfully\nLogin with your details")
-                ruser_Entry.delete(0, END)
-                rpass_Entry.delete(0, END)
-                re_pass_Entry.delete(0, END)
                 deswin()
+                messagebox.showinfo("","Registered Successfully\nLogin with your details")
+                
                 
             else:
                 messagebox.showerror("","Password doesn't match confirmation password or too small")

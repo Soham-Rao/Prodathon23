@@ -1,3 +1,19 @@
+'''
+FEATURES TO ADD
+
+see or dont see password
+
+if field left empty for add retrieve or delete password raise error
+
+press enter for add retreive and delete password windows
+
+web overlay to identify login site
+
+other qol changes and features
+
+'''
+
+
 import os 
 import csv
 import tkinter
@@ -28,7 +44,6 @@ class Windows():
         Window = tk.CTk()
         WM = Window_Makers()
 
-
         def open_win2():
             self.Second_Window()
 
@@ -50,24 +65,29 @@ class Windows():
 
     def Second_Window(self):
         PM_Window = tk.CTkToplevel()
+        PM_Window.attributes('-topmost','true')
 
         WM = Window_Makers()
-
-
-        def add():
-            self.Add_Checker()
-
-        def retrieve():
-            self.Retrieve_Checker()
-
-        def delete():
-           self.Delete_Checker()
 
         def deswin():
             try:
                 PM_Window.destroy()
             except tkinter.TclError:
                 pass
+
+        def add():
+            deswin()
+            self.Add_Checker()
+
+        def retrieve():
+            deswin()
+            self.Retrieve_Checker()
+
+        def delete():
+           deswin()
+           self.Delete_Checker()
+
+
 
             
 
@@ -77,6 +97,7 @@ class Windows():
 
     def Add_Checker(self):
         Add_Check_Window = tk.CTkToplevel()
+        Add_Check_Window.attributes('-topmost','true')
 
         Add_Check_Window.title("Verify")
         
@@ -149,6 +170,7 @@ class Windows():
                 
 
             else:
+                deswin()
                 messagebox.showerror("","Wrong Master Password")
 
         def deswin():
@@ -171,6 +193,8 @@ class Windows():
 
     def Add_Window(self):
         AddPW_Window = tk.CTkToplevel()
+        AddPW_Window.attributes('-topmost','true')
+        
 
         WM = Window_Makers()
 
@@ -194,6 +218,7 @@ class Windows():
 
     def add_details(self):
         Add_Details_Window = tk.CTkToplevel()
+        Add_Details_Window.attributes('-topmost','true')
 
         Add_Details_Window.title("Generate Password")
         
@@ -300,8 +325,9 @@ class Windows():
 
         def generate():
             addEntry(MP, data, sitename_Entry.get(), siteurl_Entry.get(), email_Entry.get(), siteusername_Entry.get(), username)
-            messagebox.showinfo("Success", "Seccessfully added password to database")
             deswin()
+            messagebox.showinfo("Success", "Seccessfully added password to database")
+            
 
         Button1 = tk.CTkButton(master = Add_Details_Window, text = "Generate Password", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = generate, width = 300, height = 40)
         Button1.place(x = 328, y = 320)
@@ -319,6 +345,7 @@ class Windows():
 
     def Retrieve_Checker(self):
         Retrieve_Check_Window = tk.CTkToplevel()
+        Retrieve_Check_Window.attributes('-topmost','true')
 
         Retrieve_Check_Window.title("Verify")
         
@@ -389,6 +416,7 @@ class Windows():
                 
 
             else:
+                deswin()
                 messagebox.showerror("","Wrong Master Password")
                 
 
@@ -412,6 +440,7 @@ class Windows():
 
     def Retrieve_Window(self):
         RetPW_Window = tk.CTkToplevel()
+        RetPW_Window.attributes('-topmost','true')
 
         WM = Window_Makers()
 
@@ -435,6 +464,7 @@ class Windows():
 
     def ret_details(self):
         Ret_Details_Window = tk.CTkToplevel()
+        Ret_Details_Window.attributes('-topmost','true')
 
         Ret_Details_Window.title("Retrieve Password")
         
@@ -511,12 +541,14 @@ class Windows():
         def retrieve():
             pw = retrieveEntry(MP, data, sitename_Entry.get(), email_Entry.get(), username)
             if pw == -1:
-                messagebox.showerror("Not found", "No such entry")
                 deswin()
+                messagebox.showerror("Not found", "No such entry")
+                
             else:
+                deswin()
                 messagebox.showinfo("Retrieved","The password has been successfully copied")
                 pyperclip.copy(pw.decode())
-                deswin()
+               
 
         Button1 = tk.CTkButton(master = Ret_Details_Window, text = "Retrieve Password", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = retrieve, width = 300, height = 40)
         Button1.place(x = 328, y = 320)
@@ -534,6 +566,7 @@ class Windows():
 
     def Delete_Checker(self):
         Delete_Check_Window = tk.CTkToplevel()
+        Delete_Check_Window.attributes('-topmost','true')
 
         Delete_Check_Window.title("Verify")
         
@@ -604,6 +637,7 @@ class Windows():
                 
 
             else:
+                deswin()
                 messagebox.showerror("","Wrong Master Password")
 
         def deswin():
@@ -626,6 +660,7 @@ class Windows():
 
     def Delete_Window(self):
         delPW_Window = tk.CTkToplevel()
+        delPW_Window.attributes('-topmost','true')
 
         WM = Window_Makers()
 
@@ -648,6 +683,7 @@ class Windows():
 
     def del_details(self):
         del_Details_Window = tk.CTkToplevel()
+        del_Details_Window.attributes('-topmost','true')
 
         del_Details_Window.title("Delete Password")
         
@@ -719,11 +755,13 @@ class Windows():
             cursor = db.cursor()
             query = "delete from prodathon." + username + " where sitename = '{}' and email = '{}';".format(sitename_Entry.get(), email_Entry.get())
             cursor.execute(query)
-            messagebox.showinfo("deleted", "record has been deleted")
-
             db.commit()
             db.close()
             deswin()
+            messagebox.showinfo("deleted", "record has been deleted")
+
+            
+            
 
         Button1 = tk.CTkButton(master = del_Details_Window, text = "Delete Password", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc" ,command = delete, width = 300, height = 40)
         Button1.place(x = 328, y = 320)
@@ -740,6 +778,7 @@ class Windows():
 
     def info_Window(self):
         Window = tk.CTkToplevel()
+        Window.attributes('-topmost','true')
         WM = Window_Makers()
 
 
@@ -748,6 +787,7 @@ class Windows():
 
     def login(self):
         LWIN = tk.CTkToplevel()
+        LWIN.attributes('-topmost','true')
         WM = Login_Window()
         WM.Make_Win(Window = LWIN, window_title = "Login", bgimg = "2ndbg")
 
