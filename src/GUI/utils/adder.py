@@ -8,7 +8,7 @@ import string
 
 def generatePassword(length):
     syms = ['$','*','<','>']
-    return ''.join([random.choice(string.ascii_letters + string.digits + random.choice(syms)) for i in range(length)]) 
+    return ''.join([random.choice(string.ascii_letters + string.digits + string.punctuation) for i in range(length)]) 
 
 
 def computeMasterKey(mp, ds):

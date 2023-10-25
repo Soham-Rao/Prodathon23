@@ -25,8 +25,8 @@ def new_user(username, password):
 
     #CREATE TABLE FOR THEIR PASSWORDS
     query = "CREATE TABLE IF NOT EXISTS Prodathon."+ username +"(sitename TEXT NOT NULL, siteurl TEXT NOT NULL, email TEXT, username TEXT, password TEXT NOT NULL);"
-    values = (username)
-    res = cursor.execute(query, values)
+#    values = (username)
+    res = cursor.execute(query)
     db.commit()
 
 

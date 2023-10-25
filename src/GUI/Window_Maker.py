@@ -49,12 +49,15 @@ class Window_Makers():
         Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
-        bgmg.save(os.path.join("imgs",bgimg+".png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
+        # bgmg.save(os.path.join("imgs",bgimg+".png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs",bgimg+".jpg")), dark_image = Image.open(os.path.join("imgs",bgimg+".jpg")), size = (window_width, window_height))
+
+
+        background = tk.CTkLabel(master = Window, image = bgmg)
         background.place(x = 0, y = 0)
 
         home_buttons(Window, text1, text2, text3, text4, fgcolor, hcolor, command1, command2, command3, command4)
@@ -97,12 +100,14 @@ class Window_Makers():
         Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
-        bgmg.save(os.path.join("imgs",bgimg+".png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
+        # bgmg.save(os.path.join("imgs",bgimg+".png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs",bgimg+".jpg")), dark_image = Image.open(os.path.join("imgs",bgimg+".jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Window, image = bgmg)
         background.place(x = 0, y = 0)
 
         pm_buttons(Window,fgcolor, hcolor, text1, text2, text3, text4, command1, command2, command3, command4)
@@ -145,12 +150,14 @@ class Window_Makers():
         Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
-        bgmg.save(os.path.join("imgs",bgimg+".png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
+        # bgmg.save(os.path.join("imgs",bgimg+".png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs",bgimg+".jpg")), dark_image = Image.open(os.path.join("imgs",bgimg+".jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Window, image = bgmg)
         background.place(x = 0, y = 0)
 
         add_widgets(Window,fgcolor, hcolor, text1, text2, command1, command2)
@@ -189,12 +196,14 @@ class Window_Makers():
         Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
-        bgmg.save(os.path.join("imgs",bgimg+".png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
+        # bgmg.save(os.path.join("imgs",bgimg+".png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs",bgimg+".jpg")), dark_image = Image.open(os.path.join("imgs",bgimg+".jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Window, image = bgmg)
         background.place(x = 0, y = 0)
 
         ret_widgets(Window,fgcolor, hcolor, text1, text2, command1, command2)
@@ -233,12 +242,14 @@ class Window_Makers():
         Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
-        bgmg.save(os.path.join("imgs",bgimg+".png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
+        # bgmg.save(os.path.join("imgs",bgimg+".png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs",bgimg+".jpg")), dark_image = Image.open(os.path.join("imgs",bgimg+".jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Window, image = bgmg)
         background.place(x = 0, y = 0)
 
         del_widgets(Window,fgcolor, hcolor, text1, text2, command1, command2)
@@ -269,12 +280,14 @@ class Window_Makers():
         Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
-        bgmg.save(os.path.join("imgs",bgimg+".png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
+        # bgmg.save(os.path.join("imgs",bgimg+".png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs",bgimg+".jpg")), dark_image = Image.open(os.path.join("imgs",bgimg+".jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Window, image = bgmg)
         background.place(x = 0, y = 0)
 
         Info_widgets(Window, hcolor)

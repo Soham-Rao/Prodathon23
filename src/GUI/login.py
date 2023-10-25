@@ -35,15 +35,17 @@ class Login_Window():
         Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Window.resizable(False, False)
 
-        global bg_img
+        global bgmg
 
-        bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
-        bgmg.save(os.path.join("imgs",bgimg+".png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)
+        # bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
+        # bgmg.save(os.path.join("imgs",bgimg+".png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)
+
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs",bgimg+".jpg")), dark_image = Image.open(os.path.join("imgs",bgimg+".jpg")), size = (window_width, window_height))
 
 
-        background = tk.CTkLabel(master = Window, image = bg_img)
+        background = tk.CTkLabel(master = Window, image = bgmg)
         background.place(x = 0, y = 0)
 
         self.widgetmaker(Window, bgimg)
@@ -138,16 +140,19 @@ class Login_Window():
             messagebox.showinfo("","You have successfully logged out")
 
 
-        #images
-        img1 = Image.open(os.path.join("imgs","back_button.png"))
-        #img.save(os.path.join("imgs","back_button.png"))
-        img1 = img1.resize((20,20), resample = 0)
-        button_img = ImageTk.PhotoImage(img1)
+        # #images
+        # img1 = Image.open(os.path.join("imgs","back_button.png"))
+        # #img.save(os.path.join("imgs","back_button.png"))
+        # img1 = img1.resize((20,20), resample = 0)
+        # button_img = ImageTk.PhotoImage(img1)
 
-        img2 = Image.open(os.path.join("imgs","back_button.png"))
-        #img2.save(os.path.join("imgs","back_button.png"))
-        img2 = img2.resize((17,25), resample = 0)
-        logout_img = ImageTk.PhotoImage(img2)
+        # img2 = Image.open(os.path.join("imgs","back_button.png"))
+        # #img2.save(os.path.join("imgs","back_button.png"))
+        # img2 = img2.resize((17,25), resample = 0)
+        # logout_img = ImageTk.PhotoImage(img2)
+
+        logout_img = tk.CTkImage(light_image = Image.open(os.path.join("imgs","back_button.png")), dark_image = Image.open(os.path.join("imgs","back_button.png")), size = (17,25))
+
 
         #buttons
         login_button = tk.CTkButton(master = Window, text = "Login", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = sql_login, width = 100, height = 50)
@@ -180,13 +185,14 @@ class Login_Window():
         register_Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         register_Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
-        bgmg.save(os.path.join("imgs",bgimg+".png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)
+        # bgmg = Image.open(os.path.join("imgs",bgimg+".jpg"))
+        # bgmg.save(os.path.join("imgs",bgimg+".png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)
 
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs",bgimg+".jpg")), dark_image = Image.open(os.path.join("imgs",bgimg+".jpg")), size = (window_width, window_height))
 
-        background = tk.CTkLabel(master = register_Window, image = bg_img)
+        background = tk.CTkLabel(master = register_Window, image = bgmg)
         background.place(x = 0, y = 0)
 
 
@@ -272,11 +278,13 @@ class Login_Window():
             except tkinter.TclError:
                 pass
 
-        #images
-        img = Image.open(os.path.join("imgs","back_button.png"))
-        #img.save(os.path.join("imgs","back_button.png"))
-        img = img.resize((20,20), resample = 0)
-        button_img = ImageTk.PhotoImage(img)
+        # #images
+        # img = Image.open(os.path.join("imgs","back_button.png"))
+        # #img.save(os.path.join("imgs","back_button.png"))
+        # img = img.resize((20,20), resample = 0)
+        # button_img = ImageTk.PhotoImage(img)
+
+        button_img = tk.CTkImage(light_image = Image.open(os.path.join("imgs","back_button.png")), dark_image = Image.open(os.path.join("imgs","back_button.png")), size = (17,25))
 
         #buttons
         register_button_2 = tk.CTkButton(master = register_Window, text = "Register", font = ("Cascadia Code SemiBold", 15), text_color = "#000000", fg_color = "#50bdcc", hover_color = "#63ecff", border_color = "#50bdcc", command = sql_register, width = 110, height = 50)

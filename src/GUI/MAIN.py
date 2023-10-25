@@ -93,12 +93,14 @@ class Windows():
         Add_Check_Window.resizable(False, False)
 
 
-        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
-        bgmg.save(os.path.join("imgs","2ndbg.png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        # bgmg.save(os.path.join("imgs","2ndbg.png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Add_Check_Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs","2ndbg.jpg")), dark_image = Image.open(os.path.join("imgs","2ndbg.jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Add_Check_Window, image = bgmg)
         background.place(x = 0, y = 0)
 
 
@@ -207,12 +209,14 @@ class Windows():
         Add_Details_Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Add_Details_Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
-        bgmg.save(os.path.join("imgs","2ndbg.png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        # bgmg.save(os.path.join("imgs","2ndbg.png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Add_Details_Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs","2ndbg.jpg")), dark_image = Image.open(os.path.join("imgs","2ndbg.jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Add_Details_Window, image = bgmg)
         background.place(x = 0, y = 0)
 
 
@@ -331,12 +335,14 @@ class Windows():
         Retrieve_Check_Window.resizable(False, False)
 
 
-        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
-        bgmg.save(os.path.join("imgs","2ndbg.png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        # bgmg.save(os.path.join("imgs","2ndbg.png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Retrieve_Check_Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs","2ndbg.jpg")), dark_image = Image.open(os.path.join("imgs","2ndbg.jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Retrieve_Check_Window, image = bgmg)
         background.place(x = 0, y = 0)
 
 
@@ -444,12 +450,14 @@ class Windows():
         Ret_Details_Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         Ret_Details_Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
-        bgmg.save(os.path.join("imgs","2ndbg.png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        # bgmg.save(os.path.join("imgs","2ndbg.png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Ret_Details_Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs","2ndbg.jpg")), dark_image = Image.open(os.path.join("imgs","2ndbg.jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Ret_Details_Window, image = bgmg)
         background.place(x = 0, y = 0)
 
 
@@ -542,12 +550,14 @@ class Windows():
         Delete_Check_Window.resizable(False, False)
 
 
-        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
-        bgmg.save(os.path.join("imgs","2ndbg.png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        # bgmg.save(os.path.join("imgs","2ndbg.png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = Delete_Check_Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs","2ndbg.jpg")), dark_image = Image.open(os.path.join("imgs","2ndbg.jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = Delete_Check_Window, image = bgmg)
         background.place(x = 0, y = 0)
 
 
@@ -653,12 +663,14 @@ class Windows():
         del_Details_Window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
         del_Details_Window.resizable(False, False)
 
-        bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
-        bgmg.save(os.path.join("imgs","2ndbg.png"))
-        img = bgmg.resize((window_width,window_height), resample = 0)
-        bg_img = ImageTk.PhotoImage(img)       
+        # bgmg = Image.open(os.path.join("imgs","2ndbg.jpg"))
+        # bgmg.save(os.path.join("imgs","2ndbg.png"))
+        # img = bgmg.resize((window_width,window_height), resample = 0)
+        # bg_img = ImageTk.PhotoImage(img)       
 
-        background = tk.CTkLabel(master = del_Details_Window, image = bg_img)
+        bgmg = tk.CTkImage(light_image = Image.open(os.path.join("imgs","2ndbg.jpg")), dark_image = Image.open(os.path.join("imgs","2ndbg.jpg")), size = (window_width, window_height))
+
+        background = tk.CTkLabel(master = del_Details_Window, image = bgmg)
         background.place(x = 0, y = 0)
 
 
